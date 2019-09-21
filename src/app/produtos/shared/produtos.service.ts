@@ -24,4 +24,26 @@ export class ProdutosService {
       })
     )
   }
+
+  //db.list trás uma lista toda.
+  getcategoriasAll() {
+    return this.db.list(FirebasePath.CATEGORIAS).snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(m => ({ key: m.payload.key, ...m.payload.val() }))
+      })
+    );
+  }
+
+  //buscar o produto por uma key
+  //dbobject trás apenas um item.
+getByKey(key: string){
+  //os sifrões servem para concatenar variável com uma constante.
+  const path = `${FirebasePath.PRODUTOS}${key}`;
+    return this.db.object(path).snapshotChanges().pipe(
+      map(change => {
+        return ({ key: change.key, ...change.payload.val() });
+      })
+    )
+  }
+
 }

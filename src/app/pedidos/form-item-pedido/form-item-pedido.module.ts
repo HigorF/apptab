@@ -3,24 +3,24 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { IonicModule } from '@ionic/angular';
 
-import { ListaProdutosPage } from './lista-produtos.page';
-import { SharedModule } from '../../core/shared/shared/shared.module';
+import { FormItemPedidoPage } from './form-item-pedido.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListaProdutosPage
+    component: FormItemPedidoPage
   }
 ];
 
 @NgModule({
   imports: [
-    SharedModule,
     CommonModule,
     FormsModule,
+    IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListaProdutosPage]
+  declarations: [FormItemPedidoPage]
 })
-export class ListaProdutosPageModule {}
+export class FormItemPedidoPageModule {}
