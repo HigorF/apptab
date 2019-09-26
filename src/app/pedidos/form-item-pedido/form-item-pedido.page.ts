@@ -15,8 +15,10 @@ produto: any = {}
 form: FormGroup;
 total: number = 0;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
-              private router: Router, private produtosService: ProdutosService,
+  constructor(private formBuilder: FormBuilder, 
+              private route: ActivatedRoute,
+              private router: Router, 
+              private produtosService: ProdutosService,
               private carrinhoService: CarrinhoService,
               private toast: ToastService) { }
 
@@ -52,17 +54,17 @@ total: number = 0;
       total: ['']
     })
   }
-
+  //atualiza o valor total mostrado
   executaCalcularTotal(){
     this.atualizaTotal(this.form.value.quantidade);
   }
-
+  //adicionar quantidade de itens do carrinho
   adicionarQuantidade(){
     let qtd = this.form.value.quantidade;
     qtd++;
     this.atualizaTotal(qtd);
   }
-
+  //retirar quantidade do produto
   removerQuantidade(){
     let qtd = this.form.value.quantidade;
     qtd--;
@@ -71,14 +73,20 @@ total: number = 0;
     
     this.atualizaTotal(qtd);
   }
-
+  //Recebe o preço do produto e realiza a multiplicação
   atualizaTotal(quantidade: number){
     this.total = this.produto.preco * quantidade;
     this.form.patchValue({quantidade:quantidade, total: this.total});
   }
-
+  //inserindo produtos no carrito (spanish xd)
   onSubmit(){
-
+    if (this.form.valid){
+      this.carrinhoService.insert(this.form.value)
+        .then( () => {
+          this.toast.show('Produto adicionado ao carrito com sucesso !');
+          this.router.navigate(['/tabs/produtos']);
+        })
+    }
   }
 
 }

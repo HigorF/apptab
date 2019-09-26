@@ -57,6 +57,10 @@ const routes: Routes = [
       {
         path: 'carrinho/novo-item/:key',
         loadChildren: '../pedidos/form-item-pedido/form-item-pedido.module#FormItemPedidoPageModule'
+      },
+      {
+        path: 'carrinho',
+        loadChildren: '../pedidos/lista-item-pedido/lista-item-pedido.module#ListaItemPedidoPageModule'
       }
     ]
   },
