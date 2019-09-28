@@ -20,7 +20,7 @@
         <ion-grid>
           <ion-row align-items-center>
             <ion-col>
-              <ion-button expand="block" color="primary" (click)="adicionarQuantidade(item)">
+              <ion-button expand="block" color="dark" (click)="adicionarQuantidade(item)">
                 <ion-icon name="add"></ion-icon>
               </ion-button>
             </ion-col>
@@ -28,7 +28,7 @@
               {{ item.quantidade }}
             </ion-col>
             <ion-col>
-              <ion-button expand="block" color="primary" (click)="removerQuantidade(item)">
+              <ion-button expand="block" color="dark" (click)="removerQuantidade(item)">
                 <ion-icon name="remove"></ion-icon>
               </ion-button>
             </ion-col>
@@ -44,8 +44,8 @@
     <app-valor [valor]="total"></app-valor>
   </p>
 
-  <ion-button expand="block" size="large" [routerLink]="['/pedido/forma-pagamento']">
-    Forma de pagamento
+  <ion-button color="dark" expand="block" size="large" [routerLink]="['/pedido/forma-pagamento']">
+    Forma de Pagamento
     <ion-icon slot="end" name="arrow-forward"></ion-icon>
   </ion-button>
 </ion-footer>
