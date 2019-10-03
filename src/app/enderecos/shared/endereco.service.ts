@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EnderecoService {
+  [x: string]: any;
 
   constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) { }
 
