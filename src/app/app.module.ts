@@ -13,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { firebaseconfig } from './../firebase-config';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,12 +25,13 @@ import { firebaseconfig } from './../firebase-config';
      AppRoutingModule,
      AngularFireModule.initializeApp(firebaseconfig),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
     ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

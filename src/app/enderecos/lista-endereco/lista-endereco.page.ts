@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { EnderecoService } from '../shared/endereco.service';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-lista-endereco',
@@ -53,8 +52,8 @@ export class ListaEnderecoPage implements OnInit {
   }
 
   remover(endereco: any) {
-    this.alert.ShowConfirmaExclusao(endereco.logradouro+','+endereco.numero, () => {
-      this.enederecoService.revome(endereco.key)
+    this.alert.ShowConfirmaExclusao(endereco.logradouro + ',' + endereco.numero, () => {
+      this.enederecoService.remove(endereco.key)
       .then( () => {
         this.toast.show('Endereço removido com sucesso.!!! ');
       })

@@ -1,8 +1,19 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>login</ion-title>
+  <!-- <ion-img slot="end" src="https://firebasestorage.googleapis.com/v0/b/vendamaq-2aa08.appspot.com/o/logo.png?alt=media&token=5329f005-06ff-4097-b85c-55bf82038d0d"></ion-img> -->
+  <ion-toolbar color="dark">
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<!-- <ion-list>
+  <ion-item *ngFor="let item of items">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="item.src"></ion-img>
+    </ion-thumbnail>
+    <ion-label>{{item.text}}</ion-label>
+  </ion-item>
+</ion-list> -->
+
 
 <ion-content padding>
   <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
@@ -17,10 +28,11 @@
     </ion-item>
 
     <div margin-vertical>
-      <ion-button color="primary" expand="block" type="submit">Entrar</ion-button>
+      <ion-button color="dark" expand="block" type="submit">Entrar</ion-button>
     </div>
   </form>
 
   <ion-button expand="block" color="dark" fill="clear" margin-top [routerLink]="['/esqueci-senha']">Esqueci minha senha</ion-button>
   <ion-button expand="block" color="dark" fill="clear" [routerLink]="['/criar-conta']">Criar uma conta</ion-button>
 </ion-content>
+<!-- <ion-img slot="end" src="https://firebasestorage.googleapis.com/v0/b/vendamaq-2aa08.appspot.com/o/logo.png?alt=media&token=5329f005-06ff-4097-b85c-55bf82038d0d"></ion-img> -->
